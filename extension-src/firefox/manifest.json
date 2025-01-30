@@ -1,0 +1,20 @@
+{
+    "name": "The Extendables Extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Extension for a proof-of-concept of \"The Extendables\" privilege escalation and persistence method.",
+    "background": {
+      "scripts": ["service-worker.js"]
+    },
+    "permissions": [
+      "nativeMessaging"
+    ],
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "{eaf44bf7-a45e-4450-979c-91cf07434c3e}",
+      "strict_min_version": "42.0"
+    }
+  }
+  
+  }
+  

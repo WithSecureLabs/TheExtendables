@@ -1,0 +1,14 @@
+{
+  "name": "The Extendables Extension",
+  "version": "1.0",
+  "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqdn1CEdSsrhxLPpn9fLNtg97CYlyXh/JyS4tWe+OrJybA/ctK3J77/cJtwFyT98RB3Qe30HbNN7Vhcd9Kdgot4Tf5ypnuJ7ij9xk31jkYOmjR6fXgHLe1EDSMYBMEYvgmGZeJbEe6jxFx7KKxHI3zU8JbUeXMvLky/OF5DBKjkm5K4vI3Tjd+Tk246CPMX02YxVseC6MNFNyzTmviso1Dy46958OevSUwPJNx+ymBjQC5umlFDGFMbw5sS9zLKOAoWtCyBGk3G52r3XFRq7/B1geLR8AWvxv3heirzkDsUOUQ60ymypA+pKDnAMzq4fc5sOieYo3aLyd21MxkbfOLwIDAQAB",
+  "manifest_version": 3,
+  "description": "Extension for a proof-of-concept of \"The Extendables\" privilege escalation and persistence method.",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [
+    "nativeMessaging"
+  ]
+
+}
