@@ -123,7 +123,7 @@ This feature creates a registry key and NativeMessaging manifest to weaponise an
 
 Where `anffbmbabbpmcaflbelkkhgdcfgppknb` is an extension ID. 
 
-Where `com.companyName.extensionsName` is a name to call the extension (this can be anything, just follow the `com.compayName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.compayName.extensionName` format is the extension name.
+Where `com.companyName.extensionName` is a name to call the extension (this can be anything, just follow the `com.compayName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.compayName.extensionName` format is the extension name. Alternatively, you could install the extension legitimately with the NativeMessaging functionality on a seperate machine and look at the NativeMessaging manifest and retrieve the extension name from there.
 
 Where `C:\\windows\\system32\\calc.exe` is the path to the NativeMessaging host application, script or file.
 

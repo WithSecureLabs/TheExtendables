@@ -129,7 +129,7 @@ int manifestParser(char* path) {
 
     //If the "nativeMessaging" string is in the file, it may be vulnerable. Return success
     if (occuranceAddr != 0) {
-        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest does not exist, you can create it!\nRetrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nDownload the extension's JavaScript and look for what is passed to 'runtime.connectNative()' in the format 'com.compayName.extensionName' for the extensionName\n\n");
+        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest and/or NativeMessaging host registry key does not exist, you can create them using the '/persist' feature of this tool!\nYou will need to retrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nLook through the extension's JavaScript and find what is passed to 'runtime.connectNative()' in the format 'com.compayName.extensionName' for the extensionName.\n\n");
         free(outBuf);
         return 0;
     }
