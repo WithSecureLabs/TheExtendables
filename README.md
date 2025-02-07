@@ -200,7 +200,7 @@ Also make sure to check the desktop - %HOMEPATH%\\Desktop
 /nativePath    - Path for native.json to be saved to. Default = C:\\ProgramData\\native.json.
 /description   - Description of extension in native.json. Default - This is an extension that extends browser functionality
 /lnkPath       - Path to shortcut file to retrieve target or backdoor. eg. %HOMEPATH%\Desktop\Google Chrome.lnk
-/extensionPath - Path to packed extension. eg. C:\\ProgramData\\extensions.crx.
+/extensionPath - Path to unpacked extension. eg. C:\\ProgramData\\
 /verbose       - Adds additional verbosity to output (Takes no argument)
 /force         - Ignore any mutex to edit or replace old payload (Takes no argument)
 
