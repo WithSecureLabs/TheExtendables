@@ -4,12 +4,12 @@
 
 This is a tool, based on the Wild West Hackin' Fest 2025 Mile High talk by WithSecure under the same title.
 
-It tool has 5 distinct functionalities:
+This tool has 5 distinct functionalities:
 
 - recon - It can identify vulnerable extensions on a machine
 - install - It can install arbitrary extensions on to a machine for exploitation
-- lnkTarget - Recovers the target path of a shortcut file
-- lnkBackdoor - Backdoors a browser shortcut to load a specified extension
+- lnkTarget - It can recover the target path of a shortcut file
+- lnkBackdoor - It can backdoor a browser shortcut to load a specified extension
 - persist - It can exploit the functionality in the talk to persist on a users machine or allow for privilege escalation
 
 Some of the tool's features can be seen in the video below:
