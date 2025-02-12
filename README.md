@@ -151,7 +151,7 @@ Instructions are also included on how to make your own vulnerable extension in t
 
 There are a number of steps you can take to protect yourself/alert on this behaviour:
 
-- Apply group policy/registry keys to stop extension loading
+- Apply group policy/registry keys to stop extension loading (https://learn.microsoft.com/en-us/deployedge/microsoft-edge-manage-extensions-policies, https://support.google.com/chrome/a/answer/7532015?hl=en)
 - Ensure NativeMessaging applications, manifests and registry keys are correctly permissioned
 - Create alerts for if a registry key is created under NativeMessaging for a browser
 - Create alerts for if a `ExtensionInstallForcelist` registry key value is created for a browser
