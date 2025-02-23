@@ -9,7 +9,7 @@ int help() {
 	"/recon        - Perform reconaissance on installed extensions\n[OPTIONAL     - /verbose]\n\n"
 	"/install      - Force installs an extension. REQUIRES ADMIN, chrome or edge only.\n[REQUIRED     - /extensionID]\n[OPTIONAL     - /browser, /allUsers, /verbose]\n\n"
 	"/lnkTarget    - Retrieves the path and arguments of a supplied shortcut file\n[REQUIRED     - /lnkPath]\n\n"
-	"/lnkBackdoor  - Backdoors a shortcut to a browser, chrome or edge only.\n[REQUIRED     - /lnkPath, /extensionPath]\n[OPTIONAL     - /browser]\nTaskbar shortcuts are stored within - %%APPDATA%%\\\\Microsoft\\\\Internet Explorer\\\\Quick Launch\\\\User Pinned\\\\TaskBar\nAlso make sure to check the desktop - %%HOMEPATH%%\\\\Desktop\n\n"
+	"/lnkBackdoor  - Backdoors a shortcut to a browser, chrome or edge only.\n[REQUIRED     - /lnkPath, /extensionPath]\n[OPTIONAL     - /browser]\nTaskbar shortcuts are stored within - %%APPDATA%%\\\\Microsoft\\\\Internet Explorer\\\\Quick Launch\\\\User Pinned\\\\TaskBar\nAlso make sure to check the desktop - %%HOMEPATH%%\\\\Desktop\nAnd a user's start menu - %APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\nAnd all user's start menu - %PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs\n\n"
 	"/persist      - Exploits a vulnerable extension to run arbitrary code through it\n[REQUIRED     - /extensionID, /extensionName, /targetPath]\n[OPTIONAL     - /browser, /allUsers, /verbose, /nativePath, /description, /force]\n\n\n"
 	
 	"[+] Arguments [+]\n[#]===========[#]\n"

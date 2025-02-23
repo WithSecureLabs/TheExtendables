@@ -71,11 +71,11 @@ int nmManifestParser(char* path) {
 
         HANDLE nativeManifestFile = CreateFileA(nmHostPath, GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_OVERLAPPED, NULL);
         if (nativeManifestFile != INVALID_HANDLE_VALUE) {
-            printf("[*] NativeMessaging host application writable and hijackable! - %s\n\n", nmHostPath);
+            printf("NativeMessaging host application: %s\n[*] NativeMessaging host application writable and hijackable!\n\n", nmHostPath);
             CloseHandle(nativeManifestFile);
         }
         else {
-            printf("[-] NativeMessaging host application not hijackable! - %s\n\n", nmHostPath);
+            printf("NativeMessaging host application: %s\n[-] NativeMessaging host application not hijackable!\n\n", nmHostPath);
         }
         //Free buffer
         free(nmHostPath);
@@ -129,13 +129,13 @@ int manifestParser(char* path) {
 
     //If the "nativeMessaging" string is in the file, it may be vulnerable. Return success
     if (occuranceAddr != 0) {
-        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest and/or NativeMessaging host registry key does not exist, you can create them using the '/persist' feature of this tool!\nYou will need to retrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nLook through the extension's JavaScript and find what is passed to 'runtime.connectNative()' in the format 'com.compayName.extensionName' for the extensionName.\n\n");
+        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest and/or NativeMessaging host registry key does not exist, you can create them using the '/persist' feature of this tool!\nYou will need to retrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nLook through the extension's JavaScript and find what is passed to 'runtime.connectNative()' in the format 'com.compayName.extensionName' for the extensionName.\n\n\n");
         free(outBuf);
         return 0;
     }
 
     //If string not in the buffer, the extension does not have the correct permissions
-    printf("[-] Not vulnerable!\n\n");
+    printf("[-] Not vulnerable!\n\n\n");
     //Free buffer
     free(outBuf);
     return 1;
@@ -188,7 +188,7 @@ int enumValues(char* path, HKEY localOrCurrent, int verbose, int forcelist) {
         retCode = RegEnumValueA(default_key, i, (LPSTR)achValue, &cchValue, NULL, NULL, (unsigned char*)valueVal, &lpDataLength);
         if (retCode == ERROR_SUCCESS)
         {
-            printf("Value: %s - %s\n", achValue, valueVal);
+            printf("Value: %s\n", valueVal);
             
             HANDLE nativeManifestFile = CreateFileA(valueVal, GENERIC_WRITE, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_OVERLAPPED, NULL);
             if (nativeManifestFile != INVALID_HANDLE_VALUE) {
@@ -277,7 +277,7 @@ int enumKeys(char* path, HKEY localOrCurrent, int verbose) {
 
             if (retCode == ERROR_SUCCESS)
             {
-                printf("\nKey: %s\n", achKey);
+                printf("\nKey: %s\\%s\n", path,achKey);
             }
             else {
                 printf("Error reading key: %d\n", retCode);
@@ -341,7 +341,7 @@ int dirListing(char* folderPath) {
     strcat_s(folderPathWild, 255, "*");
 
     //Get first file in dir and handle for enum
-    printf("\n[+] Enumerating extensions\n");
+    printf("\n[+] Enumerating extensions\n\n\n\n");
 
 
     //Set up variables for spidering further
@@ -360,7 +360,7 @@ int dirListing(char* folderPath) {
     //Loop through each item in the directory, that is a folder until there are no more
     while (dirSpider != FALSE) {
         dirSpider = FindNextFileA(dirHandle, &dirFile);
-        if ((dirSpider != FALSE) && (dirFile.dwFileAttributes == FILE_ATTRIBUTE_DIRECTORY)) {
+        if ((dirSpider != FALSE) && (dirFile.dwFileAttributes == FILE_ATTRIBUTE_DIRECTORY) && (strcmp(dirFile.cFileName, "Temp") != 0)) {
 
             printf("[+] Extension - %s\n", dirFile.cFileName);
             //When a dir is found, concatenate that with the current full path and then end it with "\\"

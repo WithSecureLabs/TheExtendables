@@ -54,9 +54,12 @@ You will need to add the following value for edge in either HKLM or HKCU dependi
 `Software\Policies\Microsoft\Edge\ExtensionInstallForcelist`
 
 
-The value within this key should be named with a number starting at `1` if none exist. If keys do exist, it should just be the next iteration of the number. Then the data within that value should be the following:
+The value within this key should be named with a number starting at `1` if none exist. If keys do exist, it should just be the next iteration of the number. Then the data within that value should be the following for Edge and Chrome respectively:
 
-`<EXTENSION ID>;https://clients2.google.com/service/update2/crx`
+- `<EXTENSION ID>;https://clients2.google.com/service/update2/crx`
+- `<EXTENSION ID>;https://edge.microsoft.com/extensionwebstorebase/v1/crx"`
+
+It should be noted that Edge can load both Edge and Chrome extensions so either value above can be used. However, Chrome can only load Chrome extensions.
 
 ### Command
 
@@ -182,6 +185,8 @@ The tool's help page can be seen below:
 [OPTIONAL     - /browser]
 Taskbar shortcuts are stored within - %APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar
 Also make sure to check the desktop - %HOMEPATH%\\Desktop
+And a user's start menu - %APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs
+And all user's start menu - %PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Programs
 
 /persist      - Exploits a vulnerable extension to run arbitrary code through it
 [REQUIRED     - /extensionID, /extensionName, /targetPath]

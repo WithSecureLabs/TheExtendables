@@ -28,7 +28,7 @@ It's functionality is that it will just start execution of the nativemessaging a
 # How to do this yourself
 
 
-The example in the `chrome` folder has been done for you and works, however if you want to change anything in it, or do this yourself, you will have to follow the steps below:
+The example in the `chrome-edge` folder has been done for you and works, however if you want to change anything in it, or do this yourself, you will have to follow the steps below:
 
 1. Run the following command on the folder with your extension contents- `"C:\Program Files\Google\Chrome\Application\chrome.exe" --pack-extension="<EXTENSION FOLDER LOCATION>"`
 
@@ -44,7 +44,7 @@ This should produce a `.crx` and a `.pem` file, we only care about the `.crx` fi
 
 ![](../images/2-get_extensionID.png)
 
-5. Now navigate to the following folder, with the ID which you just noted down - `%APPDATA%\..\Local\Google\Chrome\User Data\Default\Extensions\<ID>`.
+5. Now navigate to the following folder, with the ID which you just noted down - `%LOCALAPPDATA%\Local\Google\Chrome\User Data\Default\Extensions\<ID>`.
 
 6. Within this folder, find the `manifest.json` and copy the contents over the original.
 
