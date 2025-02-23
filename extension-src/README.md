@@ -28,7 +28,7 @@ It's functionality is that it will just start execution of the nativemessaging a
 # How to do this yourself
 
 
-The example in the `chrome-edge` folder has been done for you and works, however if you want to change anything in it, or do this yourself, you will have to follow the steps below:
+The example in the `chrome-edge` folder has been done for you and works, however if you want to change anything in it, or do this yourself, you will have to follow the steps below as the integrity checking `key` value in the extension manifest will become invalid:
 
 1. Run the following command on the folder with your extension contents- `"C:\Program Files\Google\Chrome\Application\chrome.exe" --pack-extension="<EXTENSION FOLDER LOCATION>"`
 
