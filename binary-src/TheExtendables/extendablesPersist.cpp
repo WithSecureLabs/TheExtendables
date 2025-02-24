@@ -75,7 +75,7 @@ void extendablesPersist(char* extensionId, char* extensionName, char* targetPath
         regPath = (char*)"Software\\Mozilla\\NativeMessagingHosts\\";
     }
     else {
-        printf("Browser not recognised! Use - chrome, edge or firefox\n");
+        printf("Browser not recognised! Use - Chrome, Edge or Firefox\n");
         return;
     }
     //Set whether to use the NativeMessaging Application for all users or just the current user

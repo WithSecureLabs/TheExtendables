@@ -35,7 +35,7 @@ void extensionInstall(char* extensionId, char* browser, char* allUsers, int verb
         regPath = (char*)"Software\\Policies\\Microsoft\\Edge\\ExtensionInstallForcelist";
     }
     else {
-        printf("\n\n\n[-] Browser not recognised! Use - chrome or edge\n");
+        printf("\n\n\n[-] Browser not recognised! Use - Chrome or Edge\n");
         return;
     }
 

@@ -10,7 +10,7 @@ This tool has 5 distinct functionalities:
 - install - It can install arbitrary extensions on to a machine for exploitation
 - lnkTarget - It can recover the target path of a shortcut file
 - lnkBackdoor - It can backdoor a browser shortcut to load a specified extension
-- persist - It can exploit the functionality in the talk to persist on a users machine or allow for privilege escalation
+- persist - It can exploit the functionality in the talk to persist on a user's machine or allow for privilege escalation
 
 Some of the tool's features can be seen in the video below:
 
@@ -25,11 +25,11 @@ alt="IMAGE ALT TEXT HERE" width="360" height="240" border="10" /></a>
 
 ## Recon
 
-For each browser, this command will, enumerate all installed extensions and check if they have the native messaging permissions. If they do, it will say `Potentially vulnerable extension!` if not it will say `Not vulnerable!`. For firefox, as the extensions are in an archive, it will return the paths to the archives in question for you to retrieve and run `grep -nriF nativeMessaging` on. If the manifest contains this permission it will be vulnerable.
+For each browser, this command will, enumerate all installed extensions and check if they have the native messaging permissions. If they do, it will say `Potentially vulnerable extension!` if not it will say `Not vulnerable!`. For Firefox, as the extensions are in an archive, it will return the paths to the archives in question for you to retrieve and run `grep -nriF nativeMessaging` on. If the manifest contains this permission it will be vulnerable.
 
-Then it will enumerate all of the NativeMessaging applications manifest paths from the registry (both HKCU and HKLM), returning the extension name from the value and the path to the extention manifest json file on disk. If you can overwrite this, you can hijack that extension.
+Then it will enumerate all of the NativeMessaging applications manifest paths from the registry (both HKCU and HKLM), returning the extension name from the value and the path to the extension manifest json file on disk. If you can overwrite this, you can hijack that extension.
 
-Then it will enumerate the registry for all "Managed" extensions which were force installled. There may not be any.
+Then it will enumerate the registry for all "Managed" extensions which were force installed. There may not be any.
 
 
 ### Command
@@ -43,13 +43,13 @@ You can optionally specify `/verbose` for more verbosity in the output.
 
 ## Install
 
-This will use the force install registry key to install an extension either for the current user or for all users on a system. This usually requires administrative privileges and only works in chromium-based browsers (eg. chrome, edge, etc.). It will just add the extension ID as a value in this key and when the browser is next opened it will be force installed from the respective extension store.
+This will use the force install registry key to install an extension either for the current user or for all user's on a system. This usually requires administrative privileges and only works in chromium-based browsers (eg. Chrome, Edge, etc.). It will just add the extension ID as a value in this key and when the browser is next opened it will be force installed from the respective extension store.
 
-If you are an administrator, it is possible to add the registry key through regedit. You will need to add the following value for chrome in either HKLM or HKCU depending on if you want it for all users or the current user:
+If you are an administrator, it is possible to add the registry key through regedit. You will need to add the following value for Chrome in either HKLM or HKCU depending on if you want it for all users or the current user:
 
 `Software\Policies\Google\Chrome\ExtensionInstallForcelist`
 
-You will need to add the following value for edge in either HKLM or HKCU depending on if you want it for all users or the current user:
+You will need to add the following value for Edge in either HKLM or HKCU depending on if you want it for all users or the current user:
 
 `Software\Policies\Microsoft\Edge\ExtensionInstallForcelist`
 
@@ -73,13 +73,13 @@ Where `anffbmbabbpmcaflbelkkhgdcfgppknb` is an extension ID. This can be retriev
 
 You can optionally specify `/verbose` for more verbosity in the output.
 
-You can also specify `/browser` for the taget brower (chrome, edge)
+You can also specify `/browser` for the target browser (Chrome, Edge)
 
 And you can specify `/allUsers` to install for `user` which is the current user or `machine` which installs for all users.
 
 ## LnkTarget
 
-This will use COM to retrieve the target path and agruments of a specified shortcut (`.lnk`) file.
+This will use COM to retrieve the target path and arguments of a specified shortcut (`.lnk`) file.
 
 
 ### Command
@@ -93,7 +93,7 @@ Where `"%HOMEPATH%\\Desktop\\Google Chrome.lnk"` is the path to an LNK file to r
 
 ## LnkBackdoor
 
-This will add a `--load-extension=` argument with the path to an unpackaged extension to a given shortcut file through COM. If there are no Group Policy Objects or registry keys in-place blocking loading extensions and the target browser is chromium-based, the next time the shortcut is lauched, the extension will be loaded.
+This will add a `--load-extension=` argument with the path to an unpackaged extension to a given shortcut file through COM. If there are no Group Policy Objects or registry keys in-place blocking loading extensions and the target browser is chromium-based, the next time the shortcut is launched, the extension will be loaded.
 
 Useful shortcut paths that users likely use include:
 
@@ -112,7 +112,7 @@ Where `C:\\ProgramData\\extension\\` is the path to a folder with the extension 
 
 ### Optional arguments
 
-You can optionally specify `/browser` for the taget brower (chrome, edge)
+You can optionally specify `/browser` for the target browser (Chrome, Edge)
 
 ## Persist
 
@@ -126,7 +126,7 @@ This feature creates a registry key and NativeMessaging manifest to weaponise an
 
 Where `anffbmbabbpmcaflbelkkhgdcfgppknb` is an extension ID. 
 
-Where `com.companyName.extensionName` is a name to call the extension (this can be anything, just follow the `com.compayName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.compayName.extensionName` format is the extension name. Alternatively, you could install the extension legitimately with the NativeMessaging functionality on a seperate machine and look at the NativeMessaging manifest and retrieve the extension name from there.
+Where `com.companyName.extensionName` is a name to call the extension (this can be anything, just follow the `com.compayName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.compayName.extensionName` format is the extension name. Alternatively, you could install the extension legitimately with the NativeMessaging functionality on a separate machine and look at the NativeMessaging manifest and retrieve the extension name from there.
 
 Where `C:\\windows\\system32\\calc.exe` is the path to the NativeMessaging host application, script or file.
 
@@ -134,7 +134,7 @@ Where `C:\\windows\\system32\\calc.exe` is the path to the NativeMessaging host 
 
 You can optionally specify `/verbose` for more verbosity in the output.
 
-You can also specify `/browser` for the taget brower (chrome, edge)
+You can also specify `/browser` for the target browser (Chrome, Edge)
 
 You can specify `/allUsers` to install for `user` which is the current user or `machine` which installs for all users.
 
@@ -170,17 +170,17 @@ The tool's help page can be seen below:
 [#]===============[#]
 (No main commands take arguments)
 
-/recon        - Perform reconaissance on installed extensions
+/recon        - Perform reconnaissance on installed extensions
 [OPTIONAL     - /verbose]
 
-/install      - Force installs an extension. REQUIRES ADMIN, chrome or edge only.
+/install      - Force installs an extension. REQUIRES ADMIN, Chrome or Edge only.
 [REQUIRED     - /extensionID]
 [OPTIONAL     - /browser, /allUsers, /verbose]
 
 /lnkTarget    - Retrieves the path and arguments of a supplied shortcut file
 [REQUIRED     - /lnkPath]
 
-/lnkBackdoor  - Backdoors a shortcut to a browser, chrome or edge only.
+/lnkBackdoor  - Backdoors a shortcut to a browser, Chrome or Edge only.
 [REQUIRED     - /lnkPath, /extensionPath]
 [OPTIONAL     - /browser]
 Taskbar shortcuts are stored within - %APPDATA%\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar
@@ -200,7 +200,7 @@ And all user's start menu - %PROGRAMDATA%\\Microsoft\\Windows\\Start Menu\\Progr
 /extensionID   - Identifier string for the extension, eg. anffbmbabbpmcaflbelkkhgdcfgppknb
 /extensionName - Internal name of the extension, eg. com.companyName.extensionsName
 /targetPath    - Path of exe or file with default app mapped, to run. eg. C:\\windows\\system32\\calc.exe
-/browser       - Browser to target: chrome, edge or firefox. Default = chrome
+/browser       - Browser to target: Chrome, Edge or Firefox. Default = Chrome
 /allUsers      - Install in HKLM or HKCU. user = HKCU, machine = HKLM (only works if admin). Default = user
 /nativePath    - Path for native.json to be saved to. Default = C:\\ProgramData\\native.json.
 /description   - Description of extension in native.json. Default - This is an extension that extends browser functionality
