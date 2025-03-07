@@ -129,7 +129,7 @@ int manifestParser(char* path) {
 
     //If the "nativeMessaging" string is in the file, it may be vulnerable. Return success
     if (occuranceAddr != 0) {
-        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest and/or NativeMessaging host registry key does not exist, you can create them using the '/persist' feature of this tool!\nYou will need to retrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nLook through the extension's JavaScript and find what is passed to 'runtime.connectNative()' in the format 'com.compayName.extensionName' for the extensionName.\n\n\n");
+        printf("[*] Potentially vulnerable extension!\nIf NativeMessaging manifest and/or NativeMessaging host registry key does not exist, you can create them using the '/persist' feature of this tool!\nYou will need to retrieve the extension name from the legitimate NativeMessaging manifest (you may need to install the NativeMessaging components legitimately on a test machine to get this)\nOR\nLook through the extension's JavaScript and find what is passed to 'runtime.connectNative()' in the format 'com.companyName.extensionName' for the extensionName.\n\n\n");
         free(outBuf);
         return 0;
     }
@@ -507,7 +507,7 @@ void extensionRecon(int verbose)
         return;
     }
 
-    //Expand the appdata romaing env var
+    //Expand the appdata roaming env var
     success = ExpandEnvironmentStringsA(appDataRoam, appDataRoamExpand, 255);
     int appDataRoamExpandLen = strlen(appDataRoamExpand);
 

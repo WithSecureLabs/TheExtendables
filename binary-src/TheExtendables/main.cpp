@@ -2,10 +2,9 @@
 
 //Function to print help options
 int help() {
-	printf("\n\n\nThis tool allows enumerating vulnerable extension, installing new extensions and perfroming \"TheExtendables\" persistence.\n\n\n"
+	printf("\n\n\nThis tool allows enumerating vulnerable extensions, installing new extensions and performing \"TheExtendables\" persistence.\n\n\n"
     
 	"[+] Main Commands [+]\n[#]===============[#]\n"
-	"(No main commands take arguments)\n\n"
 	"/recon        - Perform reconaissance on installed extensions\n[OPTIONAL     - /verbose]\n\n"
 	"/install      - Force installs an extension. REQUIRES ADMIN, Chrome or Edge only.\n[REQUIRED     - /extensionID]\n[OPTIONAL     - /browser, /allUsers, /verbose]\n\n"
 	"/lnkTarget    - Retrieves the path and arguments of a supplied shortcut file\n[REQUIRED     - /lnkPath]\n\n"

@@ -3,9 +3,9 @@
 /*
 If a vulnerable browser extension exists on the system, this function can be used to execute code when the browser is launched/a specific action in the browser is performed.
 
-Whenever specifiying a path, always pecify double backslashes \\.
+Whenever specifying a path, always specify double backslashes \\.
 
-Options are also present, if you are an admin to add the functionality to all users on the system for lateral movement between logged on accounts (if they also have the extension installed).
+Options are also present, if you are an admin, to add the functionality to all users on the system for lateral movement between logged on accounts (if they also have the extension installed).
 
 You'll probably want to change the nativePath as by default it will drop the native.json in ProgramData, which isn't very opsec safe.
 

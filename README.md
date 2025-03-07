@@ -25,7 +25,7 @@ alt="IMAGE ALT TEXT HERE" width="360" height="240" border="10" /></a>
 
 ## Recon
 
-For each browser, this command will, enumerate all installed extensions and check if they have the native messaging permissions. If they do, it will say `Potentially vulnerable extension!` if not it will say `Not vulnerable!`. For Firefox, as the extensions are in an archive, it will return the paths to the archives in question for you to retrieve and run `grep -nriF nativeMessaging` on. If the manifest contains this permission it will be vulnerable.
+For each browser, this command will enumerate all installed extensions and check if they have the native messaging permissions. If they do, it will say `Potentially vulnerable extension!`, if not it will say `Not vulnerable!`. For Firefox, as the extensions are in an archive, it will return the paths to the archives in question for you to retrieve and run `grep -nriF nativeMessaging` on. If the manifest contains this permission it will be vulnerable.
 
 Then it will enumerate all of the NativeMessaging applications manifest paths from the registry (both HKCU and HKLM), returning the extension name from the value and the path to the extension manifest json file on disk. If you can overwrite this, you can hijack that extension.
 
@@ -75,7 +75,7 @@ You can optionally specify `/verbose` for more verbosity in the output.
 
 You can also specify `/browser` for the target browser (Chrome, Edge)
 
-And you can specify `/allUsers` to install for `user` which is the current user or `machine` which installs for all users.
+And you can specify `/allUsers` to install for `user`, which is the current user or `machine` which installs for all users.
 
 ## LnkTarget
 
@@ -126,7 +126,7 @@ This feature creates a registry key and NativeMessaging manifest to weaponise an
 
 Where `anffbmbabbpmcaflbelkkhgdcfgppknb` is an extension ID. 
 
-Where `com.companyName.extensionName` is a name to call the extension (this can be anything, just follow the `com.compayName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.compayName.extensionName` format is the extension name. Alternatively, you could install the extension legitimately with the NativeMessaging functionality on a separate machine and look at the NativeMessaging manifest and retrieve the extension name from there.
+Where `com.companyName.extensionName` is a name to call the extension (this can be anything, just follow the `com.companyName.extensionName` format). To find this look into the target extension's JavaScript and search for where `runtime.connectNative()` is used. The value passed to this in the `com.companyName.extensionName` format is the extension name. Alternatively, you could install the extension legitimately with the NativeMessaging functionality on a separate machine and look at the NativeMessaging manifest and retrieve the extension name from there.
 
 Where `C:\\windows\\system32\\calc.exe` is the path to the NativeMessaging host application, script or file.
 
@@ -168,7 +168,6 @@ The tool's help page can be seen below:
 ```
 [+] Main Commands [+]
 [#]===============[#]
-(No main commands take arguments)
 
 /recon        - Perform reconnaissance on installed extensions
 [OPTIONAL     - /verbose]

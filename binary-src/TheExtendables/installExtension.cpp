@@ -2,7 +2,7 @@
 
 
 /*
-Installs an extension that is 'mangaged by the organisation' in a chromium based browser. Requires administrative privileges to do.
+Installs an extension that is 'managed by the organisation' in a chromium based browser. Requires administrative privileges to do.
 
 REQUIRED:
 extensionId - identifier string for the extension, eg. aeblfdkhhhdcdjpifhhbdiojplfjncoa
@@ -49,7 +49,7 @@ void extensionInstall(char* extensionId, char* browser, char* allUsers, int verb
         printf("\n\n\n[*] Installing for all users\n");
     }
     else {
-        printf("\n\n\n[-] Please pick either local for HKCU or machine for HKLM (Default is local)\n");
+        printf("\n\n\n[-] Please pick either user for HKCU or machine for HKLM (Default is local)\n");
         return;
     }
 
