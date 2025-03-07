@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 	"  | | | '_ \\ / _ \\ |  __\\ \\/ / __/ _ \\ '_ \\ / _` |/ _` | '_ \\| |/ _ \\/ __|\n"
 	"  | | | | | |  __/ | |___>  <| ||  __/ | | | (_| | (_| | |_) | |  __/\\__ \\\n"
 	"  \\_/ |_| |_|\\___| \\____/_/\\_\\\\__\\___|_| |_|\\__,_|\\__,_|_.__/|_|\\___||___/\n"
-	"\nBy WithSecure\n\n"
+	"\nBy WithSecure Consulting\n\n"
 	"\n(ASCII art from: http://www.patorjk.com/software/taag/)\n");
 
 	int recon = 0;
